@@ -1,0 +1,284 @@
+/*
+* demo.css
+* File include item demo only specific css only
+******************************************************************************/
+:root {
+  --red: #d21b20;
+}
+
+.menu .app-brand.demo {
+  height: 64px;
+  margin-top: 12px;
+}
+
+.app-brand-logo.demo svg {
+  width: 22px;
+  height: 38px;
+}
+
+.app-brand-text.demo {
+  font-size: 1.75rem;
+  letter-spacing: -0.5px;
+  text-transform: lowercase;
+}
+.timeline-block {
+  display: flex;
+  margin-bottom: 40px !important;
+}
+.span.timeline-step{
+  margin-right: 15px;
+}
+
+/* ! For .layout-navbar-fixed added fix padding top to .layout-page */
+/* Detached navbar */
+.layout-navbar-fixed .layout-wrapper:not(.layout-horizontal):not(.layout-without-menu) .layout-page {
+  padding-top: 76px !important;
+}
+
+/* Default navbar */
+.layout-navbar-fixed .layout-wrapper:not(.layout-without-menu) .layout-page {
+  padding-top: 64px !important;
+}
+
+.docs-page .layout-navbar-fixed.layout-wrapper:not(.layout-without-menu) .layout-page,
+.docs-page .layout-menu-fixed.layout-wrapper:not(.layout-without-menu) .layout-page {
+  padding-top: 62px !important;
+}
+
+/* Navbar page z-index issue solution */
+.content-wrapper .navbar {
+  z-index: auto;
+}
+
+/*
+  * Content
+  ******************************************************************************/
+
+.demo-blocks>* {
+  display: block !important;
+}
+
+.demo-inline-spacing>* {
+  margin: 1rem 0.375rem 0 0 !important;
+}
+
+/* ? .demo-vertical-spacing class is used to have vertical margins between elements. To remove margin-top from the first-child, use .demo-only-element class with .demo-vertical-spacing class. For example, we have used this class in forms-input-groups.html file. */
+.demo-vertical-spacing>* {
+  margin-top: 1rem !important;
+  margin-bottom: 0 !important;
+}
+
+.demo-vertical-spacing.demo-only-element> :first-child {
+  margin-top: 0 !important;
+}
+
+.demo-vertical-spacing-lg>* {
+  margin-top: 1.875rem !important;
+  margin-bottom: 0 !important;
+}
+
+.demo-vertical-spacing-lg.demo-only-element> :first-child {
+  margin-top: 0 !important;
+}
+
+.demo-vertical-spacing-xl>* {
+  margin-top: 5rem !important;
+  margin-bottom: 0 !important;
+}
+
+.demo-vertical-spacing-xl.demo-only-element> :first-child {
+  margin-top: 0 !important;
+}
+
+.rtl-only {
+  display: none !important;
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+[dir='rtl'] .rtl-only {
+  display: block !important;
+}
+
+/* Dropdown buttons going out of small screens */
+@media (max-width: 576px) {
+  #dropdown-variation-demo .btn-group .text-truncate {
+    width: 231px;
+    position: relative;
+  }
+
+  #dropdown-variation-demo .btn-group .text-truncate::after {
+    position: absolute;
+    top: 45%;
+    right: 0.65rem;
+  }
+}
+
+/*
+  * Layout demo
+  ******************************************************************************/
+
+.layout-demo-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.layout-demo-placeholder img {
+  width: 900px;
+}
+
+.layout-demo-info {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* new css pp */
+.wpWrapper {
+  padding-top: 50px;
+background-color: #f0f2f5;
+margin-top: 10px;
+}
+
+.text-truncate {
+  color: rgb(0, 0, 0);
+}
+
+.app-brand i {
+  color: rgb(0, 0, 0);
+}
+
+li.menu-item i {
+  color: var(--red);
+}
+
+.text-truncate.active {
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-item.navbar-search-wrapper a {
+  color: rgb(0, 0, 0) !important;
+}
+
+ul.navbar-nav i {
+  color: rgb(0, 0, 0);
+}
+
+.navbar-nav .dropdown-toggle::after {
+  content: unset !important;
+}
+
+.badge.bg-danger.rounded-pill.badge-notifications {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: black !important;
+}
+
+.border-radius-xl {
+  border-radius: 0.75rem;
+}
+
+.icon-lg {
+  width: 64px;
+  height: 64px;
+}
+
+.iconGrad {
+  background: linear-gradient(159deg, rgb(211 28 32) 35%, rgb(0 0 0) 100%) !important;
+  color: white;
+  top: 0px;
+  left: 0px;
+  height: 75px;
+  width: 75px;
+  font-weight: 600;
+  padding: 5px;
+  border-radius: 5px;
+  padding-top: 15px;
+  text-align: center;
+  margin-top: -34px;
+}
+
+.iconGrad i {
+  font-size: 40px;
+}
+
+.iconParent {
+  display: flex;
+  background-color: white;
+  justify-content: space-between;
+}
+
+.cardDash {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  position: relative;
+}
+
+.cardContent {
+  padding: 25px 30px;
+}
+.cardBottom {
+  color: black;
+  padding: 10px 30px;
+}
+.cardBottom span {
+  color: var(--red);
+  font-weight: 500;
+  padding-right: 4px;
+}
+.cardBottom p{
+  color: rgba(0, 0, 0, 0.707);
+  font-weight: 500;
+}
+.bg1 {
+  background-color: #ff000030;
+} 
+.bg2 {
+  background-color: rgb(0 55 255 / 13%);
+}
+.bg3 {
+  background-color: rgb(0 188 212 / 29%);
+}
+.card {
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -1px rgba(0,0,0,.06);
+}
+.card-header.pb-0 {
+  padding: 10px;
+  background-color: unset;
+  border-bottom: unset;
+}
+.chartCol {
+  background: white;
+  padding: 20px 10px;
+  border-radius: 5px;
+}
+.timeline-block::after {
+  position: absolute;
+  content: "";
+  background: #c1c1c1;
+  height: 62px;
+  width: 2px;
+  left: 7px;
+  top: 28px;
+}
+.timeline-block{
+  position: relative;
+}
+span.timeline-step {
+  margin-right: 15px;
+}
+div#myChart-license-text {
+  display: none;
+}

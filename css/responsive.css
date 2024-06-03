@@ -1,0 +1,18 @@
+/* desktop */
+@media (max-width:1400px) and (min-width:1200px){
+    .requestDemo button{
+        padding: 9px;
+    }
+}
+@media (max-width:1200px){
+    .seeachplatformBook {
+        display: unset;
+    }
+    .searchInputPlatform input {
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+    .requestDemo button {
+        border-radius: 5px;
+    }
+}

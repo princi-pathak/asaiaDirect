@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <title>Document</title>
+</head>
+<style>
+    .btnFreight1 {
+        background: #d31c20;
+        border: unset;
+        padding: 6px 20px;
+        border-radius: 5px;
+        color: 'white';
+        color: white;
+        font-weight: 600;
+    }
+
+    .btnFreight2 {
+
+        border: 2px solid #d31c20;
+        padding: 6px 20px;
+        border-radius: 5px;
+        color: 'white';
+        color: #d31c20;
+        font-weight: 600;
+        background-color: white;
+    }
+
+    .frightFormSec {
+        padding-top: 30px;
+    }
+
+    .frightFormSec input {
+        margin-bottom: 15px;
+        border: 1px solid #030303;
+    }
+
+    .frightFormSec select {
+        margin-bottom: 10px;
+        border: 1px solid #030303;
+    }
+
+    .frightFormSec label {
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    .dropdown {
+        position: relative;
+        font-size: 14px;
+        color: #333;
+    }
+
+    .dropdown .dropdown-list {
+        padding: 12px;
+        background: #fff;
+        position: absolute;
+        top: 80px;
+        left: 2px;
+        right: 2px;
+        box-shadow: 0 1px 2px 1px rgba(0, 0, 0, .15);
+        transform-origin: 50% 0;
+        transform: scale(1, 0);
+        transition: transform 0.15s ease-in-out 0.15s;
+        max-height: 66vh;
+        overflow-y: scroll;
+    }
+
+    .dropdown-option {
+        color: #993b33;
+    }
+
+    .dropdown .dropdown-option {
+        display: block;
+        padding: 8px 12px;
+        opacity: 0;
+        transition: opacity 0.15s ease-in-out;
+    }
+
+    .dropdown .dropdown-label {
+        border-radius: 5px;
+        display: block;
+        /* height: 30px; */
+        background: #fff;
+        border: 1px solid #030303;
+        padding: 8px 12px;
+        /* line-height: 1; */
+        cursor: pointer;
+    }
+
+    .dropdown .dropdown-label:before {
+        content: '▼';
+        float: right;
+    }
+
+    .frightFormSec .dropdown.on .dropdown-list {
+        transform: scale(1, 1);
+        transition-delay: 0s;
+    }
+
+    .frightFormSec .dropdown.on .dropdown-list .dropdown-option {
+        opacity: 1;
+        transition-delay: 0.2s;
+    }
+
+    .frightFormSec .dropdown.on .dropdown-label:before {
+        content: '▲';
+    }
+
+    .frightFormSec .dropdown [type="checkbox"] {
+        position: relative;
+        top: -1px;
+        margin-right: 4px;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <section class="frightFormSec">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <label for="">Date</label>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="col">
+                    <label>Client Ref*</label>
+                    <select class="form-select" id="autoSizingSelect">
+                        <option selected>Choose...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="">Product Description</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col">
+                    <label>Type</label>
+                    <select class="form-select" id="autoSizingSelect">
+                        <option selected>Choose...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label>Freight</label>
+                    <select class="form-select" id="autoSizingSelect">
+                        <option selected>Choose...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label>Incoterm</label>
+                    <select class="form-select" id="autoSizingSelect">
+                        <option selected>Choose...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="">Dimension</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="">Weight</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label>Quote Received</label>
+                    <select class="form-select" id="autoSizingSelect">
+                        <option selected>Choose...</option>
+                        <option value="1">Yes</option>
+                        <option value="2">No</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label>Client Quoted</label>
+                    <select class="form-select" id="autoSizingSelect">
+                        <option selected>Choose...</option>
+                        <option value="1">Yes</option>
+                        <option value="2">No</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="">Attach Quoted</label>
+                    <input type="file" class="form-control">
+                </div>
+                <div class="col">
+                    <label>Status</label>
+                    <select class="form-select" id="autoSizingSelect">
+                        <option selected>Choose...</option>
+                        <option value="1">Pending</option>
+                        <option value="2">Done</option>
+                        <option value="2">Working</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="col">
+                        <label>Priority</label>
+                        <select class="form-select" id="autoSizingSelect">
+                            <option selected>Choose...</option>
+                            <option value="1">Pending</option>
+                            <option value="2">Done</option>
+                            <option value="2">Working</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="">Comment</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="">No. of Packages</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col">
+                    <label for=""> Package Type</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="">Commodity</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="">Hazardous</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col">
+                    <label>Industry*</label>
+                    <select class="form-select" id="autoSizingSelect">
+                        <option value="1">Pending</option>
+                        <option value="2">Done</option>
+                        <option value="2">Working</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label>Country of Origin*</label>
+                    <select class="form-select" id="autoSizingSelect">
+                        <option value="1">China</option>
+                        <option value="2">Bangladesh </option>
+                        <option value="2">Working</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="col">
+                        <label>Place of Receipt/ Supplier Address</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="">Port of Loading</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label>Port of Discharge</label>
+                    <select class="form-select" id="autoSizingSelect">
+                        <option selected>Choose...</option>
+                        <option value="1">Pending</option>
+                        <option value="2">Done</option>
+                        <option value="2">Working</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="">Place of Delivery</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label>Ready for Collection</label>
+                    <select class="form-select" id="autoSizingSelect">
+                        <option selected>Choose...</option>
+                        <option value="1">Pending</option>
+                        <option value="2">Done</option>
+                        <option value="2">Working</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <div class="dropdown" data-control="checkbox-dropdown">
+                        <label for="">Assigned</label>
+                        <label class="dropdown-label">Select</label>
+
+                        <div class="dropdown-list">
+                            <a href="#" data-toggle="check-all" class="dropdown-option">
+                                Check All
+                            </a>
+
+                            <label class="dropdown-option">
+                                <input type="checkbox" name="dropdown-group" value="Selection 1" />
+                                Selection One
+                            </label>
+
+                            <label class="dropdown-option">
+                                <input type="checkbox" name="dropdown-group" value="Selection 2" />
+                                Selection Two
+                            </label>
+
+                            <label class="dropdown-option">
+                                <input type="checkbox" name="dropdown-group" value="Selection 3" />
+                                Selection Three
+                            </label>
+
+                            <label class="dropdown-option">
+                                <input type="checkbox" name="dropdown-group" value="Selection 4" />
+                                Selection Four
+                            </label>
+
+                            <label class="dropdown-option">
+                                <input type="checkbox" name="dropdown-group" value="Selection 5" />
+                                Selection Five
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <label>Frequency from Port of Loading</label>
+                    <select class="form-select" id="autoSizingSelect">
+                        <option selected>Choose...</option>
+                        <option value="1">Pending</option>
+                        <option value="2">Done</option>
+                        <option value="2">Working</option>
+                    </select>
+                </div>
+                <div class="col-lg-12">
+                    <label for="">Estimated Transit Time</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="btnFreight">
+                        <button class="btnFreight1">
+                            Close
+                        </button>
+                        <button class="btnFreight2">
+                            Save Freight
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <script src="js/bootstrap.bundle.min.js"> </script>
+    <script>
+        function CheckboxDropdown(el) {
+            var _this = this;
+            this.isOpen = false;
+            this.areAllChecked = false;
+            this.el = el;
+            this.label = this.el.querySelector('.dropdown-label');
+            this.checkAll = this.el.querySelector('[data-toggle="check-all"]');
+            this.inputs = this.el.querySelectorAll('[type="checkbox"]');
+
+            this.onCheckBox();
+
+            this.label.addEventListener('click', function (e) {
+                e.preventDefault();
+                _this.toggleOpen();
+            });
+
+            this.checkAll.addEventListener('click', function (e) {
+                e.preventDefault();
+                _this.onCheckAll();
+            });
+
+            this.inputs.forEach(function (input) {
+                input.addEventListener('change', function (e) {
+                    _this.onCheckBox();
+                });
+            });
+        }
+
+        CheckboxDropdown.prototype.onCheckBox = function () {
+            this.updateStatus();
+        };
+
+        CheckboxDropdown.prototype.updateStatus = function () {
+            var checked = this.el.querySelectorAll(':checked');
+
+            this.areAllChecked = false;
+            this.checkAll.textContent = 'Check All';
+
+            if (checked.length <= 0) {
+                this.label.textContent = 'Select Options';
+            } else if (checked.length === 1) {
+                this.label.textContent = checked[0].parentElement.textContent;
+            } else if (checked.length === this.inputs.length) {
+                this.label.textContent = 'All Selected';
+                this.areAllChecked = true;
+                this.checkAll.textContent = 'Uncheck All';
+            } else {
+                this.label.textContent = checked.length + ' Selected';
+            }
+        };
+
+        CheckboxDropdown.prototype.onCheckAll = function (checkAll) {
+            var _this = this;
+
+            if (!this.areAllChecked || checkAll) {
+                this.areAllChecked = true;
+                this.checkAll.textContent = 'Uncheck All';
+                this.inputs.forEach(function (input) {
+                    input.checked = true;
+                });
+            } else {
+                this.areAllChecked = false;
+                this.checkAll.textContent = 'Check All';
+                this.inputs.forEach(function (input) {
+                    input.checked = false;
+                });
+            }
+
+            this.updateStatus();
+        };
+
+        CheckboxDropdown.prototype.toggleOpen = function (forceOpen) {
+            var _this = this;
+
+            if (!this.isOpen || forceOpen) {
+                this.isOpen = true;
+                this.el.classList.add('on');
+                document.addEventListener('click', function (e) {
+                    if (!e.target.closest('[data-control="checkbox-dropdown"]')) {
+                        _this.toggleOpen();
+                    }
+                });
+            } else {
+                this.isOpen = false;
+                this.el.classList.remove('on');
+                document.removeEventListener('click', function () { });
+            }
+        };
+
+        var checkboxesDropdowns = document.querySelectorAll('[data-control="checkbox-dropdown"]');
+        checkboxesDropdowns.forEach(function (dropdown) {
+            new CheckboxDropdown(dropdown);
+        });
+
+    </script>
+</body>
+
+</html>
